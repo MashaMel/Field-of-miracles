@@ -22,7 +22,7 @@ for g in range(rounds):
                     for n in range(len(attempt_key)):
                         if attempt_key[n] == letter_or_word:
                             idk[n] = letter_or_word[n]
-                            print(letter_or_word[n])
+                            print(letter_or_word)
                         print("Вы хотите подсказку? Если да, то введите 1. Если нет, то 0.")
                         clue = int(input())
                         if clue != 1 and clue != 0:
@@ -39,7 +39,7 @@ for g in range(rounds):
                     for n in range(len(attempt_key)):
                         if attempt_key[n] == letter_or_word:
                             idk[n] = letter_or_word[n]
-                            print(letter_or_word[n])
+                            print(letter_or_word)
                         print("Вы хотите подсказку? Если да, то введите 1. Если нет, то 0.")
                         clue = int(input())
                         if clue != 1 and clue != 0:
@@ -62,29 +62,11 @@ for g in range(rounds):
                     print(attempt_value)
                 else:
                     continue
-            else:
-                print("Вы можете вводить только букву или слово, длина которого равна количеству чёрточек.")
         else:
-            if len(letter_or_word) == 1:
-                if letter_or_word not in attempt_key:
-                    print("Вы проиграли.")
-                else:
-                    for n in range(len(attempt_key)):
-                        if attempt_key[n] == letter_or_word:
-                            idk[n] = letter_or_word[n]
-                            print(letter_or_word[n])
-            elif len(letter_or_word) == len(attempt_key):
+            if len(letter_or_word) != len(attempt_key):
+                print("На третьей попытке вы можете вводить только слово целиком")
+            else:
                 if letter_or_word == attempt_key:
                     print("Позравляю! Вы выйграли!")
                 else:
-                    print("Вы ошиблись. -1 ошибка")
-                print("Вы хотите подсказку? Если да, то введите 1. Если нет, то 0.")
-                clue = int(input())
-                if clue != 1 and clue != 0:
-                    print("Вводите только 1 или 0!")
-                elif clue == 1:
-                    print(attempt_value)
-                else:
-                    continue
-            else:
-                print("Вы можете вводить только букву или слово, длина которого равна количеству чёрточек.")
+                    print("Вы проиграли")
